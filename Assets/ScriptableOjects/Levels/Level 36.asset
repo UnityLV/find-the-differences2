@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edacde98e8a10574fbda8edf53959f14, type: 3}
+  m_Name: Level 36
+  m_EditorClassIdentifier: 
+  <Image1>k__BackingField: {fileID: 21300000, guid: 57d2f68b5598863408a6c6b768587f5a, type: 3}
+  <Image2>k__BackingField: {fileID: 21300000, guid: 57d2f68b5598863408a6c6b768587f5a, type: 3}
+  _differenceButtonConfigs:
+  - <Position>k__BackingField: {x: 0.67, y: 0.38}
+    <Scale>k__BackingField: {x: 1.24, y: 1.24}
+  - <Position>k__BackingField: {x: 0.13, y: 0.56}
+    <Scale>k__BackingField: {x: 1.24, y: 1.24}
+  - <Position>k__BackingField: {x: 0.71, y: 0.79}
+    <Scale>k__BackingField: {x: 1.24, y: 1.24}
