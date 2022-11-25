@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edacde98e8a10574fbda8edf53959f14, type: 3}
   m_Name: Level 23
   m_EditorClassIdentifier: 
-  <Image1>k__BackingField: {fileID: 21300000, guid: 57d2f68b5598863408a6c6b768587f5a, type: 3}
-  <Image2>k__BackingField: {fileID: 21300000, guid: 57d2f68b5598863408a6c6b768587f5a, type: 3}
+  <Image1>k__BackingField: {fileID: 21300000, guid: ed3defeab5be19d409b05fbc22f90ff8, type: 3}
+  <Image2>k__BackingField: {fileID: 21300000, guid: 957fbc21de4042745a9140c5cfa377fb, type: 3}
+  <Image1Url>k__BackingField: 
+  <Image2Url>k__BackingField: 
   _differenceButtonConfigs:
-  - <Position>k__BackingField: {x: 0.67, y: 0.38}
-    <Scale>k__BackingField: {x: 1.24, y: 1.24}
-  - <Position>k__BackingField: {x: 0.13, y: 0.56}
-    <Scale>k__BackingField: {x: 1.24, y: 1.24}
-  - <Position>k__BackingField: {x: 0.71, y: 0.79}
-    <Scale>k__BackingField: {x: 1.24, y: 1.24}
+  - <Position>k__BackingField: {x: 0.15, y: 0.12}
+    <Scale>k__BackingField: {x: 0.93, y: 0.93}
+  - <Position>k__BackingField: {x: 0.86, y: 0.86}
+    <Scale>k__BackingField: {x: 1.39, y: 1.39}
+  - <Position>k__BackingField: {x: 0.67, y: 0.42}
+    <Scale>k__BackingField: {x: 0.71, y: 0.71}
