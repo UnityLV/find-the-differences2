@@ -10,6 +10,7 @@ public class PlayerCurrencyView : MonoBehaviour
     private void OnEnable()
     {
         _playerCurrency.AmountUppdate += OnAmountUppdate;
+        OnAmountUppdate(_playerCurrency.CurrentAmount);
     }
 
     private void OnDisable()

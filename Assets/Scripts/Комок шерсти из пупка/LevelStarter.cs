@@ -30,7 +30,7 @@ public class LevelStarter : MonoBehaviour
     {        
         foreach (var uiElement in _uiElementToEneble)
         {
-            uiElement.gameObject.SetActive(false);
+            uiElement.gameObject.SetActive(true);
         }
     }
 

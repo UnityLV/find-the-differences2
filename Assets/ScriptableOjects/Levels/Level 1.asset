@@ -19,7 +19,7 @@ MonoBehaviour:
     <Scale>k__BackingField: {x: 0.6, y: 0.6}
   - <Position>k__BackingField: {x: 0.08, y: 0.61}
     <Scale>k__BackingField: {x: 0.72, y: 0.72}
-  <Image1>k__BackingField: {fileID: 21300000, guid: 259d9a075ef5fe74abce6f8750106e37, type: 3}
-  <Image2>k__BackingField: {fileID: 21300000, guid: 2de84ebbdb0f6a444a3d1e30de923150, type: 3}
-  <Image1Url>k__BackingField: 
-  <Image2Url>k__BackingField: https://i.ibb.co/4FdQ0Vf/Level-1.png
+  <Image1>k__BackingField: {fileID: 0}
+  <Image2>k__BackingField: {fileID: 0}
+  <Image1Url>k__BackingField: https://i.ibb.co/f82XXbV/Level-1.jpg
+  <Image2Url>k__BackingField: https://i.ibb.co/84cxmKT/Level-1-2.jpg

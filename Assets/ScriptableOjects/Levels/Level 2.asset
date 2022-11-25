@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edacde98e8a10574fbda8edf53959f14, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
-  <Image1>k__BackingField: {fileID: 21300000, guid: 074db620ec4057744b58d959b3660bd5, type: 3}
-  <Image2>k__BackingField: {fileID: 21300000, guid: 20122ef40791a6b4290fcda7e043f10b, type: 3}
   _differenceButtonConfigs:
   - <Position>k__BackingField: {x: 0.3, y: 0.5}
     <Scale>k__BackingField: {x: 0.79, y: 0.79}
@@ -21,3 +19,7 @@ MonoBehaviour:
     <Scale>k__BackingField: {x: 0.79, y: 0.79}
   - <Position>k__BackingField: {x: 0.53, y: 0.79}
     <Scale>k__BackingField: {x: 1, y: 1}
+  <Image1>k__BackingField: {fileID: 0}
+  <Image2>k__BackingField: {fileID: 0}
+  <Image1Url>k__BackingField: https://i.ibb.co/pdLz46w/Level-2.jpg
+  <Image2Url>k__BackingField: https://i.ibb.co/VT46HD2/Level-2-2.jpg

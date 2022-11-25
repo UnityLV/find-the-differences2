@@ -17,12 +17,18 @@ public class LevelButtonView : MonoBehaviour
 
     private void OnEnable()
     {
-        _levelButton.MedalInstalled += OnMedalInstalled;
+        _levelButton.MedalInstalled += OnMedalInstalled;        
+    }
+
+    private void OnDisable()
+    {
+        _levelImage.gameObject.transform.localScale = Vector3.one;
+
     }
 
     private void OnDestroy()
     {
-        _levelButton.MedalInstalled -= OnMedalInstalled;
+        _levelButton.MedalInstalled -= OnMedalInstalled;        
     }
 
     private void OnMedalInstalled(Medals medal)
@@ -35,7 +41,6 @@ public class LevelButtonView : MonoBehaviour
 
     public void SetLevelSprite(Sprite sprite)
     {
-        Debug.Log("ХУЙ");
         _levelImage.sprite = sprite;
         _animator.SetTrigger(_showAnimationTrigger);
     }    
