@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edacde98e8a10574fbda8edf53959f14, type: 3}
   m_Name: Level 25
   m_EditorClassIdentifier: 
-  <Image1>k__BackingField: {fileID: 21300000, guid: 57d2f68b5598863408a6c6b768587f5a, type: 3}
-  <Image2>k__BackingField: {fileID: 21300000, guid: 57d2f68b5598863408a6c6b768587f5a, type: 3}
-  <Image1Url>k__BackingField: 
-  <Image2Url>k__BackingField: 
-  _differenceButtonConfigs: []
+  _differenceButtonConfigs:
+  - <Position>k__BackingField: {x: 0.79, y: 0.59}
+    <Scale>k__BackingField: {x: 1.2, y: 1.2}
+  - <Position>k__BackingField: {x: 0.52, y: 0.29}
+    <Scale>k__BackingField: {x: 0.8500001, y: 0.8500001}
+  - <Position>k__BackingField: {x: 0.2, y: 0.59}
+    <Scale>k__BackingField: {x: 0.71, y: 0.71}
+  <Image1>k__BackingField: {fileID: 21300000, guid: bcabd10ca85699848b6046107d6e9743, type: 3}
+  <Image2>k__BackingField: {fileID: 21300000, guid: cd796a6a9f52bd64bb8730012ed8b988, type: 3}
+  <Image1Url>k__BackingField: https://i.ibb.co/pyjQdSW/Level-25.jpg
+  <Image2Url>k__BackingField: https://i.ibb.co/9TTgPdG/Level-25-2.jpg

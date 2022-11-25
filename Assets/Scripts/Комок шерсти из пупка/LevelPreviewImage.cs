@@ -2,6 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
+
 public sealed class LevelPreviewImage : MonoBehaviour
 {
     [SerializeField] private RectTransform _buttonsParrent;

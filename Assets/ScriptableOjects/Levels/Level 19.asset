@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edacde98e8a10574fbda8edf53959f14, type: 3}
   m_Name: Level 19
   m_EditorClassIdentifier: 
-  <Image1>k__BackingField: {fileID: 21300000, guid: 0aea82a49356660488ee0087081af66d, type: 3}
-  <Image2>k__BackingField: {fileID: 21300000, guid: bb31daadc8c07a94ab78245a33362533, type: 3}
-  <Image1Url>k__BackingField: 
-  <Image2Url>k__BackingField: 
   _differenceButtonConfigs:
   - <Position>k__BackingField: {x: 0.15, y: 0.34}
     <Scale>k__BackingField: {x: 0.85, y: 0.85}
@@ -23,3 +19,7 @@ MonoBehaviour:
     <Scale>k__BackingField: {x: 0.86, y: 0.86}
   - <Position>k__BackingField: {x: 0.8, y: 0.42}
     <Scale>k__BackingField: {x: 0.63, y: 0.63}
+  <Image1>k__BackingField: {fileID: 21300000, guid: 0aea82a49356660488ee0087081af66d, type: 3}
+  <Image2>k__BackingField: {fileID: 21300000, guid: bb31daadc8c07a94ab78245a33362533, type: 3}
+  <Image1Url>k__BackingField: https://i.ibb.co/HP6V4gr/Level-19.jpg
+  <Image2Url>k__BackingField: https://i.ibb.co/bWBF2v2/Level-19-2.jpg

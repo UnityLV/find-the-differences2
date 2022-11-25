@@ -33,7 +33,10 @@ public class LevelButtonView : MonoBehaviour
     public void SetLevelSprite(Sprite sprite)
     {
         _levelImage.sprite = sprite;
-        StartCoroutine(LevelImageAnimation());
+        if (gameObject.activeSelf)
+        {
+            StartCoroutine(LevelImageAnimation());
+        }
     }
 
     private IEnumerator LevelImageAnimation()

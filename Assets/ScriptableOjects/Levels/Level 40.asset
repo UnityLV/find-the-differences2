@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edacde98e8a10574fbda8edf53959f14, type: 3}
+  m_Name: Level 40
+  m_EditorClassIdentifier: 
+  _differenceButtonConfigs:
+  - <Position>k__BackingField: {x: 0.26, y: 0.85}
+    <Scale>k__BackingField: {x: 0.73, y: 0.73}
+  - <Position>k__BackingField: {x: 0.09, y: 0.44}
+    <Scale>k__BackingField: {x: 1, y: 1}
+  - <Position>k__BackingField: {x: 0.9, y: 0.55}
+    <Scale>k__BackingField: {x: 0.76, y: 0.76}
+  <Image1>k__BackingField: {fileID: 21300000, guid: 87e5b493f9db20c46b9033d7632ae9d4, type: 3}
+  <Image2>k__BackingField: {fileID: 21300000, guid: d90acd4095fbcf3449a9fe778149122b, type: 3}
+  <Image1Url>k__BackingField: https://i.ibb.co/XXDFqkt/Level-40.jpg
+  <Image2Url>k__BackingField: https://i.ibb.co/FHD0FfS/Level-40-2.jpg

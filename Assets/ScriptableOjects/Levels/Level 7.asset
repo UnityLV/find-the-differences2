@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edacde98e8a10574fbda8edf53959f14, type: 3}
   m_Name: Level 7
   m_EditorClassIdentifier: 
-  <Image1>k__BackingField: {fileID: 21300000, guid: 57d2f68b5598863408a6c6b768587f5a, type: 3}
-  <Image2>k__BackingField: {fileID: 21300000, guid: 57d2f68b5598863408a6c6b768587f5a, type: 3}
   _differenceButtonConfigs:
-  - <Position>k__BackingField: {x: 0.67, y: 0.38}
-    <Scale>k__BackingField: {x: 1.24, y: 1.24}
+  - <Position>k__BackingField: {x: 0.72, y: 0.35}
+    <Scale>k__BackingField: {x: 1.6, y: 1.6}
+  - <Position>k__BackingField: {x: 0.14, y: 0.46}
+    <Scale>k__BackingField: {x: 1.78, y: 1.78}
+  - <Position>k__BackingField: {x: 0.65, y: 0.7}
+    <Scale>k__BackingField: {x: 0.55, y: 0.55}
+  <Image1>k__BackingField: {fileID: 21300000, guid: 6040a3d8e004b134c8406a60028e8658, type: 3}
+  <Image2>k__BackingField: {fileID: 21300000, guid: 567f179eb74de4241a5e87523abc0d50, type: 3}
+  <Image1Url>k__BackingField: https://i.ibb.co/XY3Kbkg/Level-7.jpg
+  <Image2Url>k__BackingField: https://i.ibb.co/n7Mzy8K/Level-7-2.jpg

@@ -20,7 +20,7 @@ public class ImageWebDownloader
 
     private Sprite ToSpriteConverter(Texture2D texture2D)
     {
-        return Sprite.Create(texture2D, new Rect(0.0f, 0.0f, texture2D.width, texture2D.height), new Vector2(0.5f, 0.5f),100f);
+        return Sprite.Create(texture2D, new Rect(0.0f, 0.0f, texture2D.width, texture2D.height), new Vector2(0.5f, 0.5f));
 
     }
 

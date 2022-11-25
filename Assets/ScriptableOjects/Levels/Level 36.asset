@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edacde98e8a10574fbda8edf53959f14, type: 3}
   m_Name: Level 36
   m_EditorClassIdentifier: 
-  <Image1>k__BackingField: {fileID: 21300000, guid: 57d2f68b5598863408a6c6b768587f5a, type: 3}
-  <Image2>k__BackingField: {fileID: 21300000, guid: 57d2f68b5598863408a6c6b768587f5a, type: 3}
-  <Image1Url>k__BackingField: 
-  <Image2Url>k__BackingField: 
-  _differenceButtonConfigs: []
+  _differenceButtonConfigs:
+  - <Position>k__BackingField: {x: 0.91, y: 0.44}
+    <Scale>k__BackingField: {x: 1.47, y: 1.47}
+  - <Position>k__BackingField: {x: 0.05, y: 0.22}
+    <Scale>k__BackingField: {x: 0.57, y: 0.57}
+  - <Position>k__BackingField: {x: 0.35, y: 0.61}
+    <Scale>k__BackingField: {x: 0.58, y: 0.58}
+  <Image1>k__BackingField: {fileID: 21300000, guid: a052f875e192a3b46ad54b9fd5d73c19, type: 3}
+  <Image2>k__BackingField: {fileID: 21300000, guid: 64f96697bdd883d48a7a7c2bd81b5a62, type: 3}
+  <Image1Url>k__BackingField: https://i.ibb.co/c1JB63j/Level-36.jpg
+  <Image2Url>k__BackingField: https://i.ibb.co/D1MJnwY/Level-36-2.jpg

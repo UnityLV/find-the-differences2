@@ -38,7 +38,7 @@ public sealed class LevelBulder : MonoBehaviour
 
     private void PlaceImages(Level level)
     {
-        if (level.Image1Url != string.Empty && level.Image2Url != string.Empty)
+        if (level.Image1 == null || level.Image2 == null)
         {
             StartCoroutine(_imageWebDownloader.SetImage(level.Image1Url, SetSpriteOnImage1));
             StartCoroutine(_imageWebDownloader.SetImage(level.Image2Url, SetSpriteOnImage2));

@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class LevelStarter : MonoBehaviour
 {
     [SerializeField] private RectTransform[] _uiElementToDisable;
+    [SerializeField] private RectTransform[] _uiElementToEneble;
     [SerializeField] private LevelBulder _levelBulder;
 
     [SerializeField] private Image _topImageInCanvas;
@@ -17,10 +19,19 @@ public class LevelStarter : MonoBehaviour
     public void StartLevel(Level level)
     {
         DisableUI();
+        EnebleUI();
         EnebleCanvasImages();
         UnlockZoom();
 
         _levelBulder.BuildLevel(level);
+    }
+
+    private void EnebleUI()
+    {        
+        foreach (var uiElement in _uiElementToEneble)
+        {
+            uiElement.gameObject.SetActive(false);
+        }
     }
 
     private void DisableUI()
