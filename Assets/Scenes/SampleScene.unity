@@ -365,7 +365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &113787940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1576,6 +1576,9 @@ MonoBehaviour:
   _uiElementToDisable:
   - {fileID: 1051488766}
   - {fileID: 2044102868}
+  - {fileID: 113787940}
+  _uiElementToEneble:
+  - {fileID: 1674052874}
   _levelBulder: {fileID: 592978338}
   _topImageInCanvas: {fileID: 774985549}
   _bottomImageInCanvas: {fileID: 750139122}
@@ -1673,7 +1676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelLoader: {fileID: 592978341}
-  _levelButtonTeplate: {fileID: 814264181089551083, guid: 3ba131ee91ac1be44b88240846cc0310, type: 3}
+  _levelButtonTeplate: {fileID: 9190882465043539183, guid: 3ba131ee91ac1be44b88240846cc0310, type: 3}
   _levels: {fileID: 11400000, guid: 157385f0b499efe44a1a6bc6a5f28cca, type: 2}
   _buttonsParrent: {fileID: 2093181668}
 --- !u!114 &592978351
@@ -2251,7 +2254,7 @@ RectTransform:
   m_AnchorMin: {x: 0.1304197, y: 0.26000002}
   m_AnchorMax: {x: 0.31986013, y: 0.81200004}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 3.9729805, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &737550507
 MonoBehaviour:

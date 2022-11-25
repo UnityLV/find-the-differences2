@@ -33,14 +33,9 @@ public sealed class LevelPreviewImage : MonoBehaviour
         {
             if (levelIndex == levelButtons[levelIndex].Button.Index)
             {
-                if (_levels[levelIndex].Image1Url != string.Empty)
-                {
-                    StartCoroutine(_imageDownloader.SetImage(_levels[levelIndex].Image1Url, levelButtons[levelIndex].SetLevelSprite));
-                }
-                else
-                {
-                    levelButtons[levelIndex].SetLevelSprite(_levels[levelIndex].Image1);
-                }
+                StartCoroutine(_imageDownloader.SetImage(_levels[levelIndex].Image1Url, levelButtons[levelIndex].SetLevelSprite));
+                
+                
             }            
         }        
     }

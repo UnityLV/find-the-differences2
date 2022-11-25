@@ -10,6 +10,9 @@ public class LevelButtonView : MonoBehaviour
     [SerializeField] private Image _medalImage;    
     [SerializeField] private Image _levelImage;
 
+    [SerializeField] private Animator _animator;
+
+    private readonly string _showAnimationTrigger = "Show";
     public LevelButton Button => _levelButton;
 
     private void OnEnable()
@@ -32,25 +35,9 @@ public class LevelButtonView : MonoBehaviour
 
     public void SetLevelSprite(Sprite sprite)
     {
+        Debug.Log("ХУЙ");
         _levelImage.sprite = sprite;
-        if (gameObject.activeSelf)
-        {
-            StartCoroutine(LevelImageAnimation());
-        }
-    }
-
-    private IEnumerator LevelImageAnimation()
-    {
-        Vector3 startScale = 0.1f * Vector3.one;
-        float speed = 20f;
-        _levelImage.transform.localScale = startScale;
-
-        while (Tools.IsAlmostEquals(_levelImage.transform.localScale, Vector3.one) == false)
-        {
-            _levelImage.transform.localScale = Vector3.Lerp(
-                _levelImage.transform.localScale, Vector3.one, Time.deltaTime * speed);
-            yield return null;
-        }
-        _levelImage.transform.localScale = Vector3.one;
-    }
+        _animator.SetTrigger(_showAnimationTrigger);
+    }    
 }
+
