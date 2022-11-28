@@ -5,7 +5,6 @@ using UnityEngine;
 
 public sealed class LevelPreviewImage : MonoBehaviour
 {
-    [SerializeField] private RectTransform _buttonsParrent;
     [SerializeField] private LevelButtonSpawner _levelButtonSpawner;
 
     [SerializeField] private Levels _levels;
@@ -17,7 +16,7 @@ public sealed class LevelPreviewImage : MonoBehaviour
         _levelButtonSpawner.ButtonsSpawned += OnButtonsSpawned;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         _levelButtonSpawner.ButtonsSpawned -= OnButtonsSpawned;
     }
@@ -32,9 +31,8 @@ public sealed class LevelPreviewImage : MonoBehaviour
         for (int levelIndex = 0; levelIndex < _levels.Length; levelIndex++)
         {
             if (levelIndex == levelButtons[levelIndex].Button.Index)
-            {
-                StartCoroutine(_imageDownloader.SetImage(_levels[levelIndex].Image1Url, levelButtons[levelIndex].SetLevelSprite));
-                
+            {                
+                StartCoroutine(_imageDownloader.SetImage(_levels[levelIndex].PreviewUrl, levelButtons[levelIndex].SetLevelSprite));                
                 
             }            
         }        

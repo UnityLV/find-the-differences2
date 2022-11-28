@@ -13,19 +13,12 @@ public class Level : ScriptableObject
     
     [field: SerializeField] public string Image1Url { get; private set; }
     [field: SerializeField] public string Image2Url { get; private set; }   
+    [field: SerializeField] public string PreviewUrl { get; private set; }   
 
-    public IEnumerable<DifferenceButtonConfig> DifferenceButtonConfigs => _differenceButtonConfigs;    
 
-    public void SetConfigs(IEnumerable<DifferenceButtonConfig> config)
-    {
-        //_differenceButtonConfigs = config.ToArray();
-    }
 
-    public void SetImages(Image imageTop,Image imageBottom)
-    {
-        //Image1 = imageTop.sprite;
-        //Image2 = imageBottom.sprite;
-    }
+    public IEnumerable<DifferenceButtonConfig> DifferenceButtonConfigs => _differenceButtonConfigs;  
+
 
     public void SetImage1(Sprite sprite) => Image1 = sprite;
 

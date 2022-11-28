@@ -7,18 +7,14 @@ public class LevelsImages : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < _levels.Length; i++)
-        {
-            var level = _levels[i];
+        //for (int i = 0; i < _levels.Length; i++)
+        //{
+        //    var level = _levels[i];
 
-            if (level.Image1 == null)
-            {
-                StartCoroutine(_imageDownloader.SetImage(level.Image1Url, level.SetImage1));
-            }
-            if (level.Image2 == null)
-            {
-                StartCoroutine(_imageDownloader.SetImage(level.Image2Url, level.SetImage2));
-            }
-        }
+        //    if (level.PreviewUrl != string.Empty)
+        //    {
+        //        StartCoroutine(_imageDownloader.SetImage(level.PreviewUrl, level.SetImage1));
+        //    }            
+        //}
     }
 }

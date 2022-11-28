@@ -23,7 +23,6 @@ public class LevelButtonView : MonoBehaviour
     private void OnDisable()
     {
         _levelImage.gameObject.transform.localScale = Vector3.one;
-
     }
 
     private void OnDestroy()
