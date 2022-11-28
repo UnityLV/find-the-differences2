@@ -12,16 +12,26 @@ public class DifferenceButtonPromtView : MonoBehaviour
     private void OnEnable()
     {
         _differenceButtonPromt.ShowedPromt += OnShowedPromt;
+        _differenceButtonPromt.NotEnoughCurrency += OnNotEnoughCurrency;
     }
+
+    
 
     private void OnDisable()
     {
         _differenceButtonPromt.ShowedPromt -= OnShowedPromt;
+        _differenceButtonPromt.NotEnoughCurrency -= OnNotEnoughCurrency;
+
     }
 
     private void OnShowedPromt(DifferenceButton button)
     {
         ShowPromtOn(button);
+    }
+
+    private void OnNotEnoughCurrency()
+    {
+        throw new System.NotImplementedException();
     }
 
     private void ShowPromtOn(DifferenceButton button)

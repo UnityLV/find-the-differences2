@@ -6,12 +6,16 @@ using UnityEngine.Events;
 public class DifferenceButtonPromt : MonoBehaviour
 {
     [SerializeField] private LevelBulder _levelBulder;
+    [SerializeField] private PlayerCurrency _playerCurrency;
 
     private List<DifferenceButton> _differenceButtons;
+
+    private int _promtCost = 10;
 
     public int PromtUsedThisLevel { get; private set; }
 
     public event UnityAction<DifferenceButton> ShowedPromt;
+    public event UnityAction NotEnoughCurrency;
 
     private void OnEnable()
     {
@@ -30,7 +34,19 @@ public class DifferenceButtonPromt : MonoBehaviour
         
     }
 
-    public void ShowPromt()
+    public void TryShowPromt()
+    {
+        if (_playerCurrency.TryRemove(_promtCost))
+        {
+            ShowPromt();
+        }
+        else
+        {
+            NotEnoughCurrency?.Invoke();
+        }
+    }
+
+    private void ShowPromt()
     {
         if (_differenceButtons != null)
         {

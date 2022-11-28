@@ -1,14 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace LibraryForGames
 {
     public static class Tools
     {
-        public static void LogColor(string message, Color color)
+        public static IEnumerator LateCall(Action action, float seconds)
+        {           
+            yield return new WaitForSeconds(seconds);
+
+            action();
+        }
+        public static void LogColor(this string message, Color color)
         {
             Debug.Log(string.Format("<color=#{0:X2}{1:X2}{2:X2}>{3}</color>", (byte)(color.r * 255f), (byte)(color.g * 255f), (byte)(color.b * 255f), message));
         }

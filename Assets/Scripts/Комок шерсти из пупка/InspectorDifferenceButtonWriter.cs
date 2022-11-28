@@ -14,9 +14,9 @@ public class InspectorDifferenceButtonWriter : MonoBehaviour
     {
         var calculators = FindObjectsOfType<NormalizedPositionCalculator>();        
 
-        //_level.SetConfigs(ConvertToConfig(calculators));
+        _level.SetConfigs(ConvertToConfig(calculators));
 
-        //_level.SetImages(_topImage, _bottomImage);
+        _level.SetImages(_topImage, _bottomImage);
     }    
 
     private IEnumerable<DifferenceButtonConfig> ConvertToConfig(NormalizedPositionCalculator[] calculators)

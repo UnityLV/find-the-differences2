@@ -5,17 +5,17 @@ public class PlayerCurrency : MonoBehaviour
 {
     public event UnityAction<int> AmountUppdate;    
 
-    public int CurrentAmount { get ; private set; }
+    public int Amount { get ; private set; }
 
     public void Add(int amount)
     {
-        CurrentAmount += amount;
-        AmountUppdate?.Invoke(CurrentAmount);
+        Amount += amount;
+        AmountUppdate?.Invoke(Amount);
     }
 
     public bool TryRemove(int amount)
     {
-        if (CurrentAmount >= amount)
+        if (Amount >= amount)
         {
             Remove(amount);
             return true;
@@ -25,7 +25,7 @@ public class PlayerCurrency : MonoBehaviour
 
     private void Remove(int amount)
     {
-        CurrentAmount -= amount;
-        AmountUppdate?.Invoke(CurrentAmount);
+        Amount -= amount;
+        AmountUppdate?.Invoke(Amount);
     }
 }

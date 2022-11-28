@@ -6,6 +6,8 @@ public class LevelStarter : MonoBehaviour
 {
     [SerializeField] private RectTransform[] _uiElementToDisable;
     [SerializeField] private RectTransform[] _uiElementToEneble;
+    [SerializeField] private UIAnimationWindow[] _uiElementsToAnimation;
+    
     [SerializeField] private LevelBulder _levelBulder;
 
     [SerializeField] private Image _topImageInCanvas;
@@ -20,10 +22,19 @@ public class LevelStarter : MonoBehaviour
     {
         DisableUI();
         EnebleUI();
+        HideAnimatedUI();
         EnebleCanvasImages();
         UnlockZoom();
 
         _levelBulder.BuildLevel(level);
+    }
+
+    private void DisableUI()
+    {
+        foreach (var uiElement in _uiElementToDisable)
+        {
+            uiElement.gameObject.SetActive(false);
+        }
     }
 
     private void EnebleUI()
@@ -32,13 +43,13 @@ public class LevelStarter : MonoBehaviour
         {
             uiElement.gameObject.SetActive(true);
         }
-    }
+    }    
 
-    private void DisableUI()
+    private void HideAnimatedUI()
     {
-        foreach (var uiElement in _uiElementToDisable)
+        foreach (var element in _uiElementsToAnimation)
         {
-            uiElement.gameObject.SetActive(false);
+            element.Hide();
         }
     }
 
