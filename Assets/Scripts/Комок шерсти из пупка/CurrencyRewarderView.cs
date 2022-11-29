@@ -11,6 +11,7 @@ public class CurrencyRewarderView : MonoBehaviour
     [SerializeField] private float _minDelay;
     [SerializeField] private float _maxDelay;
     private float _animationLifeTime = 3;
+    private int _maxCurrencyAnimation = 4;
 
     private void OnEnable()
     {
@@ -33,7 +34,7 @@ public class CurrencyRewarderView : MonoBehaviour
 
     private IEnumerator RewardAnimation(int count)
     {
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < count && i <= _maxCurrencyAnimation; i++)
         {
             float randomDelay = Random.Range(_minDelay, _maxDelay);
             yield return new WaitForSeconds(randomDelay);

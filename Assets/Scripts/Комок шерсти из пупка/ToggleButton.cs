@@ -2,7 +2,7 @@
 
 public class ToggleButton : BaseUIButton
 {
-    [SerializeField] private GameObject _objectToToggle;
+    [SerializeField] private GameObject _objectToToggle;   
 
     public override void OnClick()
     {
@@ -11,6 +11,6 @@ public class ToggleButton : BaseUIButton
 
     private void ToggleObject()
     {
-        _objectToToggle.SetActive(_objectToToggle.activeSelf == false);
+        _objectToToggle.SetActive(_objectToToggle.activeSelf == false);        
     }
 }

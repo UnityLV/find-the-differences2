@@ -15,7 +15,7 @@ public class LevelFinalizer : MonoBehaviour
     [SerializeField] private DifferenceButtonsDetector _differenceButtonsDetector;
     [SerializeField] private NextLevelLoader _levelLoader;
 
-    [SerializeField] private PlayerSaves _playerSaves;
+    [SerializeField] private PlayerSaves _playerSaves;    
 
     public event UnityAction<IEnumerable<(DifferenceButton, DifferenceButton)>> FocusOnAllButtons;
 

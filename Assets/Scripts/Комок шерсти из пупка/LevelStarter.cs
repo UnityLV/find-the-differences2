@@ -17,9 +17,12 @@ public class LevelStarter : MonoBehaviour
     [SerializeField] private ZoomDetector _zoomDetectorBottom;
 
     [SerializeField] private Sprite _defaulSprite;
+    [SerializeField] private YandexAD _yandexAD;
 
     public void StartLevel(Level level)
     {
+        _yandexAD.ShowFullscreenAD();
+
         DisableUI();
         EnebleUI();
         HideAnimatedUI();

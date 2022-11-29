@@ -4,7 +4,10 @@ using UnityEngine.Events;
 
 public class PlayerSaves : MonoBehaviour
 {
+    [SerializeField] private PlayerCurrency _playerCurrency;
     private PlayerProgress _playerProgress = new();
+
+    private string _currencyKey = "Currency";
 
     public event UnityAction<PlayerProgress> Loaded;
 
@@ -12,20 +15,6 @@ public class PlayerSaves : MonoBehaviour
     {
         yield return null;     
         
-        LoadPrefs();
-    }
-
-    private void Update() 
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            ClearData();
-        }
-    }
-
-    public void ClearData()
-    {
-        PlayerPrefs.DeleteAll();
         LoadPrefs();
     }
 
@@ -50,11 +39,17 @@ public class PlayerSaves : MonoBehaviour
             }
             
         }
+
+        if (PlayerPrefs.HasKey(_currencyKey))
+        {
+            _playerCurrency.SetAmount(PlayerPrefs.GetInt(_currencyKey));            
+        }
         Loaded?.Invoke(_playerProgress);
     }
 
     public void Save()
     {
+        PlayerPrefs.SetInt(_currencyKey, _playerCurrency.Amount);
         foreach (var level in _playerProgress.LevelsCompleat)
         {            
             PlayerPrefs.SetInt($"Level{level.Index}", level.Medal);            

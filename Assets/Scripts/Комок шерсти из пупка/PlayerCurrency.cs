@@ -28,4 +28,10 @@ public class PlayerCurrency : MonoBehaviour
         Amount -= amount;
         AmountUppdate?.Invoke(Amount);
     }
+
+    public void SetAmount(int amount)
+    {
+        Amount = amount;
+        AmountUppdate?.Invoke(Amount);
+    }
 }

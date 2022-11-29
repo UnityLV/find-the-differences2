@@ -5,12 +5,14 @@ using System.Linq;
 
 public sealed class LevelFinalizerView : MonoBehaviour
 {
-    [SerializeField] private Camera _camera;
     [SerializeField] private LevelFinalizer _levelFinalizer;
+    [SerializeField] private Camera _camera;
     [SerializeField] private GameObject _starEffect;
 
     [SerializeField] private RectTransform _endLevelMenu;
     [SerializeField] private RectTransform _startParrent;
+
+    [SerializeField] private RectTransform[] _uiToDisable;
 
     private readonly float _particleLifeTime = 3f;
     private readonly WaitForSeconds _startEffectsDelay = new(1);
@@ -29,7 +31,12 @@ public sealed class LevelFinalizerView : MonoBehaviour
 
     private void OnHighlightAllButtons(IEnumerable<(DifferenceButton, DifferenceButton)> buttons)
     {
+        foreach (var uiElement in _uiToDisable)
+        {
+            uiElement.gameObject.SetActive(false);
+        }
         StartCoroutine(StartChainAnimation(buttons));
+
     }
 
     private void OnLevelEndedByForse(int levelIndex)

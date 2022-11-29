@@ -2,12 +2,15 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using LibraryForGames;
 using Random = UnityEngine.Random;
 
 public class DifferenceButtonView : MonoBehaviour
 {
     [SerializeField] private Image _image;
     [SerializeField] private DifferenceButton _button;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip[] _openSounds;
 
     [SerializeField] private AnimationCurve _openImageSpeed;
     [SerializeField] private AnimationCurve _alphaImageSpeed;
@@ -28,6 +31,9 @@ public class DifferenceButtonView : MonoBehaviour
 
     private void OnPressed(DifferenceButton button)
     {
+        float randomPich = Random.Range(0.7f, 1f);
+        _audioSource.pitch = randomPich;
+        _audioSource.PlayOneShot(_openSounds.RandomElement());
         StartCoroutine(OpenImage());
     }
 

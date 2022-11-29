@@ -4,6 +4,7 @@ public class DifferenceButtonPromtView : MonoBehaviour
 {
     [SerializeField] private GameObject _promtTemplate;
     [SerializeField] private RectTransform _effectParrent;
+    [SerializeField] private RectTransform _notEnoughMenu;
 
     [SerializeField] private DifferenceButtonPromt _differenceButtonPromt;
 
@@ -31,7 +32,7 @@ public class DifferenceButtonPromtView : MonoBehaviour
 
     private void OnNotEnoughCurrency()
     {
-        
+        _notEnoughMenu.gameObject.SetActive(true);
     }
 
     private void ShowPromtOn(DifferenceButton button)

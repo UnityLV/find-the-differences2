@@ -8,6 +8,8 @@ public class DifferenceButtonPromt : MonoBehaviour
     [SerializeField] private LevelBulder _levelBulder;
     [SerializeField] private PlayerCurrency _playerCurrency;
 
+    [SerializeField] private YandexAD _yandexAD;
+
     private List<DifferenceButton> _differenceButtons;
 
     private int _promtCost = 10;
@@ -20,11 +22,16 @@ public class DifferenceButtonPromt : MonoBehaviour
     private void OnEnable()
     {
         _levelBulder.ButtonsCreated += OnButtonsCreated;
+        _yandexAD.Rewarded += OnRewarded;
     }
+
+    
 
     private void OnDisable()
     {
         _levelBulder.ButtonsCreated -= OnButtonsCreated;
+        _yandexAD.Rewarded -= OnRewarded;
+
 
     }
     private void OnButtonsCreated(List<DifferenceButton> buttons)
@@ -32,6 +39,11 @@ public class DifferenceButtonPromt : MonoBehaviour
         PromtUsedThisLevel = 0;
         _differenceButtons = buttons;
         
+    }
+
+    private void OnRewarded()
+    {
+        ShowPromt();
     }
 
     public void TryShowPromt()
