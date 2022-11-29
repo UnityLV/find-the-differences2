@@ -1,4 +1,4 @@
-﻿public struct LevelProgress
+﻿public class LevelProgress
 {
     public int Index { get; }
     public int Medal { get; set; }

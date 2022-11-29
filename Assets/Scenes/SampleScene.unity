@@ -405,53 +405,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerCurrency: {fileID: 592978354}
   _amountText: {fileID: 146205873}
---- !u!1 &136404721
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 136404724}
-  - component: {fileID: 136404723}
-  m_Layer: 0
-  m_Name: Inspector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &136404723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136404721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03bd4b565609aa445ab1736e0106b91f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _topImage: {fileID: 774985549}
-  _bottomImage: {fileID: 750139122}
-  _level: {fileID: 11400000, guid: bed03e09787ce6941915132bb1f4d4af, type: 2}
---- !u!4 &136404724
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136404721}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 210.91577, y: 749.8224, z: -27.878567}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &136790550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,7 +1681,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 592978355}
         m_TargetAssemblyTypeName: DifferenceButtonPromt, Assembly-CSharp
-        m_MethodName: ShowPromt
+        m_MethodName: TryShowPromt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1787,6 +1740,7 @@ GameObject:
   - component: {fileID: 592978352}
   - component: {fileID: 592978355}
   - component: {fileID: 592978357}
+  - component: {fileID: 592978358}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -1926,6 +1880,7 @@ MonoBehaviour:
   _zoomDetectorBottom: {fileID: 1193550179}
   _differenceButtonsDetector: {fileID: 592978339}
   _levelLoader: {fileID: 592978341}
+  _playerSaves: {fileID: 592978347}
 --- !u!114 &592978346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2054,7 +2009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelBulder: {fileID: 592978338}
-  _playerCurrency: {fileID: 0}
+  _playerCurrency: {fileID: 592978354}
 --- !u!114 &592978357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2068,6 +2023,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levels: {fileID: 11400000, guid: 157385f0b499efe44a1a6bc6a5f28cca, type: 2}
+--- !u!114 &592978358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592978335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246d05cca2007a64a98897033f806992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cavas: {fileID: 1716852686}
+  "_\u0441urrencyRewarder": {fileID: 592978352}
+  _rewadAnimationTemplate: {fileID: 9016179509217209151, guid: aaf69337a21470c448efa375f88cd6db, type: 3}
+  _minDelay: 1
+  _maxDelay: 1
 --- !u!1 &620078851
 GameObject:
   m_ObjectHideFlags: 0

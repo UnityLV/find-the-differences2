@@ -13,9 +13,11 @@ public class LevelFinalizer : MonoBehaviour
     [SerializeField] private ZoomDetector _zoomDetectorBottom;
 
     [SerializeField] private DifferenceButtonsDetector _differenceButtonsDetector;
-    [SerializeField] private NextLevelLoader _levelLoader;   
+    [SerializeField] private NextLevelLoader _levelLoader;
 
-    public event UnityAction<IEnumerable<(DifferenceButton, DifferenceButton)>> HighlightAllButtons;
+    [SerializeField] private PlayerSaves _playerSaves;
+
+    public event UnityAction<IEnumerable<(DifferenceButton, DifferenceButton)>> FocusOnAllButtons;
 
     public event UnityAction<int> LevelSolved;
     public event UnityAction<int> LevelEndedByForse;
@@ -32,7 +34,7 @@ public class LevelFinalizer : MonoBehaviour
 
     private void OnAllButtonPressed(IEnumerable<(DifferenceButton, DifferenceButton)> buttons)
     {
-        HighlightAllButtons?.Invoke(buttons);
+        FocusOnAllButtons?.Invoke(buttons);
 
         EndLevel();
     }
@@ -44,6 +46,8 @@ public class LevelFinalizer : MonoBehaviour
         BlockZoom();
 
         LevelSolved?.Invoke(_levelLoader.CurrentLevelIndex);
+
+        _playerSaves.Save();
     }
 
     public void ForsedEndLevel()

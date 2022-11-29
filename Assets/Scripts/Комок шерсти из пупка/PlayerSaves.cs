@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerSaves : MonoBehaviour
@@ -7,12 +8,14 @@ public class PlayerSaves : MonoBehaviour
 
     public event UnityAction<PlayerProgress> Loaded;
 
-    private void Start()
+    private IEnumerator Start()
     {
-        LoadPrefs();       
+        yield return null;     
+        
+        LoadPrefs();
     }
 
-    private void Update()
+    private void Update() 
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -50,7 +53,7 @@ public class PlayerSaves : MonoBehaviour
         Loaded?.Invoke(_playerProgress);
     }
 
-    public void SavePrefs()
+    public void Save()
     {
         foreach (var level in _playerProgress.LevelsCompleat)
         {            

@@ -31,7 +31,7 @@ public class DifferenceButtonPromtView : MonoBehaviour
 
     private void OnNotEnoughCurrency()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     private void ShowPromtOn(DifferenceButton button)

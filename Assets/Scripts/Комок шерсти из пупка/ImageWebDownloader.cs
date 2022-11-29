@@ -1,7 +1,6 @@
 ﻿using UnityEngine.Networking;
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 using System;
 
 public class ImageWebDownloader
@@ -24,6 +23,7 @@ public class ImageWebDownloader
 
     }
 
+   
 }
 
 

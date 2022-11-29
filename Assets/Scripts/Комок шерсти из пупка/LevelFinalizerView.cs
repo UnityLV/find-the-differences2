@@ -17,13 +17,13 @@ public sealed class LevelFinalizerView : MonoBehaviour
 
     private void OnEnable()
     {
-        _levelFinalizer.HighlightAllButtons += OnHighlightAllButtons;
+        _levelFinalizer.FocusOnAllButtons += OnHighlightAllButtons;
         _levelFinalizer.LevelEndedByForse += OnLevelEndedByForse;
     }    
 
     private void OnDisable()
     {
-        _levelFinalizer.HighlightAllButtons -= OnHighlightAllButtons;
+        _levelFinalizer.FocusOnAllButtons -= OnHighlightAllButtons;
         _levelFinalizer.LevelEndedByForse -= OnLevelEndedByForse;
     }
 

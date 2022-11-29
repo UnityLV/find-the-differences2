@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   m_configObjects:
-    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: e6a144d1d87416d4ca8e49b9828c4b0c, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 8f18cce7c9fe8bc49833b537626e13d4, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 5c72c0a5bb2ac964f98545dda2ae98c4, type: 2}
