@@ -11,6 +11,6 @@ public class ToggleButton : BaseUIButton
 
     private void ToggleObject()
     {
-        _objectToToggle.SetActive(_objectToToggle.activeSelf == false);        
+        _objectToToggle.SetActive(_objectToToggle.activeInHierarchy == false);        
     }
 }

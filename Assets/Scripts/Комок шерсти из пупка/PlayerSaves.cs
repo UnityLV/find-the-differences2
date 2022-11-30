@@ -5,16 +5,16 @@ using UnityEngine.Events;
 public class PlayerSaves : MonoBehaviour
 {
     [SerializeField] private PlayerCurrency _playerCurrency;
+    [SerializeField] private YandexSaves _yandexSaves;
+
     private PlayerProgress _playerProgress = new();
 
     private string _currencyKey = "Currency";
 
     public event UnityAction<PlayerProgress> Loaded;
 
-    private IEnumerator Start()
-    {
-        yield return null;     
-        
+    private void Start()
+    {  
         LoadPrefs();
     }
 

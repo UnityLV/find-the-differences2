@@ -2,6 +2,6 @@
 
 public class PlayerProgress
 {
-    public List<LevelProgress> LevelsCompleat = new();   
-    
+    public int Money;
+    public List<LevelProgress> LevelsCompleat = new();       
 }

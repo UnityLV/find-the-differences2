@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public sealed class LevelBulder : MonoBehaviour
 {    
     [SerializeField] private DifferenceButton _differenceButtonPrefab;
+    [SerializeField] private Canvas _canvas;
 
     [SerializeField] private Image _imageInCanvas1;
     [SerializeField] private Image _imageInCanvas2;
@@ -111,7 +112,7 @@ public sealed class LevelBulder : MonoBehaviour
     {
         foreach (var config in configs)
         {
-            Vector2 worldPosition = CalculateWorldPosition(image, config.Position);
+            Vector2 worldPosition = CalculateWorldPosition(image.rectTransform, config.Position);
 
             var differenceButton = Instantiate(_differenceButtonPrefab, worldPosition, Quaternion.identity, image.rectTransform);
 
@@ -121,14 +122,15 @@ public sealed class LevelBulder : MonoBehaviour
         }
     }
 
-    private Vector2 CalculateWorldPosition(Image image, Vector2 normalizedPosition)
+    private Vector2 CalculateWorldPosition(RectTransform transform, Vector2 normalizedPosition)
     {
-        Rect rect = image.rectTransform.rect;
-        Vector2 leftBottomCorner = new Vector2(rect.xMin, rect.yMin) + (Vector2)image.rectTransform.position;
-        Vector2 worldPositonOffset = new Vector2(rect.xMax * normalizedPosition.x, rect.yMax * normalizedPosition.y) * 2 - Vector2.one;
-        Vector2 worldPosition = worldPositonOffset + leftBottomCorner;
-        return worldPosition;
-    }
+        Vector2 leftMin = transform.rect.min * _canvas.transform.localScale + (Vector2)transform.position;
+        Vector2 rightMax = transform.rect.max * _canvas.transform.localScale + (Vector2)transform.position;
 
+        float normalWidnt = (rightMax.x - leftMin.x) * normalizedPosition.x;
+        float normalHight = (rightMax.y - leftMin.y) * normalizedPosition.y;
+
+        return new Vector2(normalWidnt, normalHight) + leftMin;
+    }
 
 }

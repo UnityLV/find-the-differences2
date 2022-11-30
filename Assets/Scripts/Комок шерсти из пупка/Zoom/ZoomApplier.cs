@@ -28,7 +28,7 @@ public class ZoomApplier : MonoBehaviour
     private void Update()
     {
         if (_detector.TryGetZoom(out float zoomDelta, out Vector2 point))        
-            _imageZoomer.Zoom(zoomDelta, point);
+            _imageZoomer.Zoom(zoomDelta * -1, point);
         
 
         if (IsDoubleTap(out Vector2 position))        

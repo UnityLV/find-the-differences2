@@ -14,16 +14,16 @@ public class YandexAD : MonoBehaviour
 
     public void ShowFullscreenAD()
     {
-#if UNITY_WEBGL
-        ShowFullscreenAdv();
-#endif
+
+        //ShowFullscreenAdv();
+
     }
 
     public void ShowRewardAD()
     {
-#if UNITY_WEBGL
-        ShowRewardedVideo();
-#endif
+
+        //ShowRewardedVideo();
+
     }
 
     public void OnRewardADOpen()
@@ -33,12 +33,12 @@ public class YandexAD : MonoBehaviour
 
     public void OnRewardADClose()
     {
-        
+        Rewarded?.Invoke();
     }
     
     public void OnRewardADRewarded()
     {
-        Rewarded?.Invoke();
+        
 
 
     }

@@ -1,7 +1,7 @@
 ﻿public class LevelProgress
 {
-    public int Index { get; }
-    public int Medal { get; set; }
+    public int Index;
+    public int Medal;
 
     public LevelProgress(int index, int medal)
     {

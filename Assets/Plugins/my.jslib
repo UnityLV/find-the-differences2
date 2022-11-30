@@ -45,20 +45,7 @@ mergeInto(LibraryManager.library, {
         }
     }
 	})
-  	},
-
-  	ByBalance500: function(){
-
-  		myGameInstance.SendMessage('Game', 'AddIntExtern' ,500);
-  		
-  		//payments.purchase({ id: 'Balance500' }).then(purchase => {
-        // Покупка успешно совершена!
-        // Начисляем на баланс 500 и используем покупку.       
-		
-        //payments.consumePurchase(purchase.purchaseToken);
-    	//});
-
-  	},
+  	}, 	
 
 
 	CheckIsAvalableForShortcut: function(){
@@ -92,8 +79,6 @@ mergeInto(LibraryManager.library, {
 		stringToUTF8(lang,buffer,bufferSize);
 		return buffer;
 	},
-
-
 
 
   	SetPlayerPersonalInformation: function () {

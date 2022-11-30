@@ -10,14 +10,10 @@ public abstract class BaseUIButton : MonoBehaviour
     private void Awake()
     {
         _button = GetComponent<Button>();
-    }
-
-    private void OnEnable()
-    {
         _button.onClick.AddListener(OnClick);
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         _button.onClick.RemoveListener(OnClick);
     }
