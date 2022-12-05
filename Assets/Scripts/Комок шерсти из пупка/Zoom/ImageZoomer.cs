@@ -18,11 +18,6 @@ public class ImageZoomer
         Confinder2 = confinder2;
     }
 
-    public void Zoom(float zoomDelta)
-    {
-        Zoom(zoomDelta, _lastZoomPoint);
-    }
-
     public void Zoom(float zoomDelta, Vector2 worldPoint)
     {
         _lastZoomPoint = worldPoint;

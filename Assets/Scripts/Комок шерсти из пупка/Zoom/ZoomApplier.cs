@@ -14,6 +14,10 @@ public class ZoomApplier : MonoBehaviour
     private DoubleTapZoomer _doubleTapZoomer;
 
     private Coroutine _coroutine;
+    private float _timeAfterLastTouch;
+    private int _lastTouchCount;
+
+    private bool _isCanZoom;
 
     private void Awake()
     {
@@ -27,9 +31,14 @@ public class ZoomApplier : MonoBehaviour
 
     private void Update()
     {
+        if (_isCanZoom == false)
+        {
+            return;
+        }
+        _timeAfterLastTouch += Time.deltaTime;
+
         if (_detector.TryGetZoom(out float zoomDelta, out Vector2 point))        
-            _imageZoomer.Zoom(zoomDelta * -1, point);
-        
+            _imageZoomer.Zoom(-zoomDelta, point);        
 
         if (IsDoubleTap(out Vector2 position))        
             if (_coroutine == null)            
@@ -54,16 +63,36 @@ public class ZoomApplier : MonoBehaviour
 
     private bool IsDoubleTap(out Vector2 position)
     {
-        position = default;
+        if (IsUnickTouches())
+        {
+            float timeToDoubleToch = 0.3f;            
 
-        if (Input.touchCount >= 1)        
-            position = Input.GetTouch(0).position;        
-        
-        return
-            Input.touchCount >= 1 &&
-            IsScreenPointOver(_rectConfinder.Outside, Input.GetTouch(0).position) &&
-            Input.GetTouch(0).phase == TouchPhase.Began &&
-            Input.GetTouch(0).tapCount == 2;
+            if (Input.touchCount == 1 && IsScreenPointOver(_rectConfinder.Outside, Input.GetTouch(0).position))
+            {
+                if (timeToDoubleToch > _timeAfterLastTouch)
+                {
+                    _timeAfterLastTouch = 0;
+                    position = Input.GetTouch(0).position;
+                    return true;
+                }
+                _timeAfterLastTouch = 0;
+            }
+        }       
+
+        position = Vector2.zero;
+        return false;
+
+    }
+
+    private bool IsUnickTouches()
+    {
+        if (_lastTouchCount != Input.touchCount)
+        {
+            _lastTouchCount = Input.touchCount;
+            return true;
+        }
+        _lastTouchCount = Input.touchCount;
+        return false;
     }
 
     private bool IsScreenPointOver(RectTransform rectTransform, Vector2 sceenPoint)
@@ -75,5 +104,14 @@ public class ZoomApplier : MonoBehaviour
         var bounds = new Bounds((Vector3)rect.center + rectTransform.position, (Vector3)rect.size + Vector3.forward * 100f);
         return bounds.Contains(sceenPoint);
     }
+    public void BlockZoom()
+    {
+        _isCanZoom = false;
+    }
 
+    public void UnlockZoom()
+    {
+        _isCanZoom = true;
+
+    }
 }

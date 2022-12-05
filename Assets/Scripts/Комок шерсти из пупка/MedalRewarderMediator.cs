@@ -33,8 +33,10 @@ public class MedalRewarderMediator : MonoBehaviour
         {
             if (button.Index == levelIndex)
             {
-                button.SetMedal(CalcuiateMedal(_buttonPromt.PromtUsedThisLevel));
-                _playerSaves.SetLevelMedal(levelIndex, Medals.Gold);
+                var medal = CalcuiateMedal(_buttonPromt.PromtUsedThisLevel);
+
+                button.SetMedal(medal);
+                _playerSaves.SetLevelMedal(levelIndex, medal);
             }
         }             
     }
@@ -47,6 +49,7 @@ public class MedalRewarderMediator : MonoBehaviour
             case 1: return Medals.Silver;
             case 2: return Medals.Silver;
             case 3: return Medals.Bronze;
+            case 4: return Medals.Bronze;
             default: return Medals.Non;                
         }
     }

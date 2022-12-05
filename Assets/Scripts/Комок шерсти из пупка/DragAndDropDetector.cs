@@ -43,11 +43,8 @@ public class DragAndDropDetector : MonoBehaviour, IDragHandler, IEndDragHandler
         if (IsAvalableForDrag())
         {
             foreach (var collider in _rectConfinders)
-            {
-                if (IsDefaultZoom(collider) == false)
-                {
-                    MoveCollider(eventData, collider);
-                }
+            {                
+                MoveCollider(eventData, collider);
             }
 
             _dragDelta = eventData.delta;

@@ -1,4 +1,5 @@
-﻿public class LevelProgress
+﻿[System.Serializable]
+public class LevelProgress
 {
     public int Index;
     public int Medal;

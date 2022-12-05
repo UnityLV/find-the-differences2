@@ -13,8 +13,8 @@ public class LevelStarter : MonoBehaviour
     [SerializeField] private Image _topImageInCanvas;
     [SerializeField] private Image _bottomImageInCanvas;
 
-    [SerializeField] private ZoomDetector _zoomDetectorTop;
-    [SerializeField] private ZoomDetector _zoomDetectorBottom;
+    [SerializeField] private ZoomApplier _zoomApplierTop;
+    [SerializeField] private ZoomApplier _zoomApplierBottom;
 
     [SerializeField] private Sprite _defaulSprite;
     [SerializeField] private YandexAD _yandexAD;
@@ -58,9 +58,6 @@ public class LevelStarter : MonoBehaviour
 
     private void EnebleCanvasImages()
     {
-        _topImageInCanvas.color = Color.white;
-        _bottomImageInCanvas.color = Color.white;
-
         _topImageInCanvas.sprite = _defaulSprite;
         _bottomImageInCanvas.sprite = _defaulSprite;
     }
@@ -68,7 +65,7 @@ public class LevelStarter : MonoBehaviour
    
     private void UnlockZoom()
     {
-        _zoomDetectorTop.UnlockZoom();
-        _zoomDetectorBottom.UnlockZoom();
+        _zoomApplierTop.UnlockZoom();
+        _zoomApplierBottom.UnlockZoom();
     }
 }

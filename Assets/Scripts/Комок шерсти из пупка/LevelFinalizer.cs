@@ -9,8 +9,8 @@ public class LevelFinalizer : MonoBehaviour
     [SerializeField] private ZoomApplier _imageTop;
     [SerializeField] private ZoomApplier _imageBottom;
 
-    [SerializeField] private ZoomDetector _zoomDetectorTop;
-    [SerializeField] private ZoomDetector _zoomDetectorBottom;
+    [SerializeField] private ZoomApplier _zoomApplierTop;
+    [SerializeField] private ZoomApplier _zoomApplierBottom;
 
     [SerializeField] private DifferenceButtonsDetector _differenceButtonsDetector;
     [SerializeField] private NextLevelLoader _levelLoader;
@@ -57,8 +57,8 @@ public class LevelFinalizer : MonoBehaviour
 
     private void BlockZoom()
     {
-        _zoomDetectorTop.BlockZoom();
-        _zoomDetectorBottom.BlockZoom();
+        _zoomApplierTop.BlockZoom();
+        _zoomApplierBottom.BlockZoom();
     }
 
     private void ResetZoom()

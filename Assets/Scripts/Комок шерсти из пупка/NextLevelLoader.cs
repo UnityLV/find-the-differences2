@@ -6,6 +6,8 @@ public sealed class NextLevelLoader : MonoBehaviour
     [SerializeField] private Levels _levels;
     [SerializeField] private LevelStarter _levelStarter;
 
+    [SerializeField] private RectTransform _levelsMenu;
+
     private int _currentLevelIndex = -1;    
 
     public event UnityAction AllLevelsEnded;
@@ -28,8 +30,14 @@ public sealed class NextLevelLoader : MonoBehaviour
         }
         else
         {
-            Debug.Log("Is last LEVEL");
-            AllLevelsEnded?.Invoke();
+            ProcessEndAllLevels();
         }
-    }    
+    }
+
+    private void ProcessEndAllLevels()
+    {
+        Debug.Log("Is last LEVEL");
+        _levelsMenu.gameObject.SetActive(true);
+        AllLevelsEnded?.Invoke();
+    }
 }

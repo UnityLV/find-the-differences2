@@ -14,16 +14,12 @@ public class YandexAD : MonoBehaviour
 
     public void ShowFullscreenAD()
     {
-
-        //ShowFullscreenAdv();
-
+        ShowFullscreenAdv();
     }
 
     public void ShowRewardAD()
     {
-
-        //ShowRewardedVideo();
-
+        ShowRewardedVideo();
     }
 
     public void OnRewardADOpen()

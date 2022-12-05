@@ -29,16 +29,16 @@ mergeInto(LibraryManager.library, {
           callbacks: {
           onOpen: () => {
             console.log('Video ad open.');
-            myGameInstance.SendMessage('Yandex', 'OnRewardADOpen');
+            myGameInstance.SendMessage('Game', 'OnRewardADOpen');
         },
           onRewarded: () => {
             console.log('Rewarded!');
-            myGameInstance.SendMessage('Yandex', 'OnRewardADRewarded');
+            myGameInstance.SendMessage('Game', 'OnRewardADRewarded');
 
         },
           onClose: () => {
             console.log('Video ad closed.');
-            myGameInstance.SendMessage('Yandex', 'OnRewardADClose');
+            myGameInstance.SendMessage('Game', 'OnRewardADClose');
         }, 
           onError: (e) => {
             console.log('Error while open video ad:', e);
@@ -54,7 +54,7 @@ mergeInto(LibraryManager.library, {
 			  console.log('Shortcut is allowed?:', prompt);
 			  if (prompt.canShow) {
 			    // Здесь можно показать кнопку для добавления ярлыка
-			    myGameInstance.SendMessage('Yandex', 'TakeIsAvalableForShortcutInfo', prompt.canShow);
+			    myGameInstance.SendMessage('Game', 'TakeIsAvalableForShortcutInfo', prompt.canShow);
 			    
 			}
 		});
@@ -66,7 +66,7 @@ mergeInto(LibraryManager.library, {
 			  console.log('Shortcut created?:', result);
 			  if (result.outcome === 'accepted') {
 			    // А здесь — начислить награду за добавление ярлыка
-			    myGameInstance.SendMessage('Yandex', 'ShortcutHasBeenCreate');
+			    myGameInstance.SendMessage('Game', 'ShortcutHasBeenCreate');
 			  }
 			});
 	},
@@ -83,8 +83,8 @@ mergeInto(LibraryManager.library, {
 
   	SetPlayerPersonalInformation: function () {
 
-  		myGameInstance.SendMessage('Yandex', 'SetName', player.getName());
-  		myGameInstance.SendMessage('Yandex', 'SetPhoto', player.getPhoto("medium"));    	
+  		myGameInstance.SendMessage('Game', 'SetName', player.getName());
+  		myGameInstance.SendMessage('Game', 'SetPhoto', player.getPhoto("medium"));    	
   	},	
 
   	RateForGame: function() {
@@ -105,9 +105,9 @@ mergeInto(LibraryManager.library, {
   	
 
   	LoadStatsExtern: function () {
-  		player.getStats().then(_data => {
+  		player.getData().then(_data => {
   			const myJSON = JSON.stringify(_data);
-  			myGameInstance.SendMessage('Yandex', 'SetPlayerStats', myJSON);
+  			myGameInstance.SendMessage('Game', 'SetPlayerStats', myJSON);
   		});
     	
   	},	
@@ -116,12 +116,12 @@ mergeInto(LibraryManager.library, {
 
   		const statsDataJson = UTF8ToString(stats);
 		var statsData = JSON.parse(statsDataJson);
-  		player.setStats(statsData);  
+  		player.setData(statsData);  
   		console.log(statsData);
 
   		
-  		const myJSONStats = JSON.stringify(statsData);
-		myGameInstance.SendMessage('Yandex', 'SetPlayerStats', myJSONStats);
+  		//const myJSONStats = JSON.stringify(statsData);
+		//myGameInstance.SendMessage('Game', 'SetPlayerStats', myJSONStats);
 
   	},
 
