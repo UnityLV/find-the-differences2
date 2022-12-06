@@ -30,6 +30,12 @@ public class Level : ScriptableObject
         Image1 = topImage.sprite;
         Image2 = bottomImage.sprite;
     }
+
+    public void SetUrls(string url1, string url2)
+    {
+        Image1Url = url1;
+        Image2Url = url2;
+    }
     public void SetImage1(Sprite sprite) => Image1 = sprite;
 
     public void SetImage2(Sprite sprite) => Image2 = sprite;

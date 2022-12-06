@@ -21,13 +21,19 @@ public class YandexSaves : MonoBehaviour
     }
 
     public void SavePlayerStats(string jsonData)
-    {    
+    {
+#if !UNITY_EDITOR
         SaveStatsExtern(jsonData);
-    } 
+
+#endif
+    }
 
     public void LoadStats()
     {
+#if !UNITY_EDITOR
         LoadStatsExtern();
+
+#endif
     }
 
 }

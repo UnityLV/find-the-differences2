@@ -1,4 +1,5 @@
 ﻿using LibraryForGames;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,8 @@ public sealed class LevelBulder : MonoBehaviour
     [SerializeField] private Image _imageInCanvas2;
 
     [SerializeField] private ZoomApplier _zoomApplier1;
-    [SerializeField] private ZoomApplier _zoomApplier2;    
+    [SerializeField] private ZoomApplier _zoomApplier2;
+    [SerializeField] private DragAndDropDetector _dragAndDropDetector;
 
     private List<DifferenceButton> _currentDifferenceButtons;
     private ImageWebDownloader _imageWebDownloader = new();
@@ -24,17 +26,27 @@ public sealed class LevelBulder : MonoBehaviour
     public void BuildLevel(Level level)
     {
         StopAllCoroutines();
-        ResetZoom();
 
+        ResetZoom();
+        
+
+        MoveImageInStartPosition();
         TryClearPreviusButtons();
         PlaceImages(level);
         CreateDifferenceButtons(level);
     }
 
+    private void MoveImageInStartPosition()
+    {
+        //_dragAndDropDetector.SlideUp();
+    }
+
     private void ResetZoom()
     {
         _zoomApplier1.ResetZoom();
-        _zoomApplier2.ResetZoom();        
+        _zoomApplier2.ResetZoom();
+
+        
     }
 
     private void PlaceImages(Level level)

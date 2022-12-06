@@ -27,10 +27,13 @@ public class LevelStarter : MonoBehaviour
         EnebleUI();
         HideAnimatedUI();
         EnebleCanvasImages();
+        
         UnlockZoom();
 
         _levelBulder.BuildLevel(level);
     }
+
+    
 
     private void DisableUI()
     {
@@ -62,7 +65,6 @@ public class LevelStarter : MonoBehaviour
         _bottomImageInCanvas.sprite = _defaulSprite;
     }
 
-   
     private void UnlockZoom()
     {
         _zoomApplierTop.UnlockZoom();
