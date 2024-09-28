@@ -2,12 +2,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 public sealed class LevelBulder : MonoBehaviour
-{    
+{
     [SerializeField] private DifferenceButton _differenceButtonPrefab;
     [SerializeField] private Canvas _canvas;
 
@@ -28,7 +29,6 @@ public sealed class LevelBulder : MonoBehaviour
         StopAllCoroutines();
 
         ResetZoom();
-        
 
         MoveImageInStartPosition();
         TryClearPreviusButtons();
@@ -45,8 +45,6 @@ public sealed class LevelBulder : MonoBehaviour
     {
         _zoomApplier1.ResetZoom();
         _zoomApplier2.ResetZoom();
-
-        
     }
 
     private void PlaceImages(Level level)
@@ -55,6 +53,12 @@ public sealed class LevelBulder : MonoBehaviour
         {
             StartCoroutine(_imageWebDownloader.SetImage(level.Image1Url, SetSpriteOnImage1));
             StartCoroutine(_imageWebDownloader.SetImage(level.Image2Url, SetSpriteOnImage2));
+
+            LoadingAnimation loadingAnimation1 = _imageInCanvas1.GetComponentInChildren<LoadingAnimation>();
+            loadingAnimation1.Enable();
+
+            LoadingAnimation loadingAnimation2 = _imageInCanvas2.GetComponentInChildren<LoadingAnimation>();
+            loadingAnimation2.Enable();
         }
         else
         {
@@ -65,12 +69,19 @@ public sealed class LevelBulder : MonoBehaviour
 
     private void SetSpriteOnImage1(Sprite sprite)
     {
+        LoadingAnimation loadingAnimation1 = _imageInCanvas1.GetComponentInChildren<LoadingAnimation>();
+        loadingAnimation1.Disable();
+
         _imageInCanvas1.sprite = sprite;
 
         StartCoroutine(ImageAnimation(_imageInCanvas1));
     }
+
     private void SetSpriteOnImage2(Sprite sprite)
     {
+        LoadingAnimation loadingAnimation2 = _imageInCanvas2.GetComponentInChildren<LoadingAnimation>();
+        loadingAnimation2.Disable();
+
         _imageInCanvas2.sprite = sprite;
 
         StartCoroutine(ImageAnimation(_imageInCanvas2));
@@ -87,6 +98,7 @@ public sealed class LevelBulder : MonoBehaviour
             image.transform.localScale = Vector3.Lerp(image.transform.localScale, Vector3.one, Time.deltaTime * speed);
             yield return null;
         }
+
         image.transform.localScale = Vector3.one;
     }
 
@@ -103,6 +115,7 @@ public sealed class LevelBulder : MonoBehaviour
         _currentDifferenceButtons = differenceButtons;
         ButtonsCreated?.Invoke(_currentDifferenceButtons);
     }
+
     private void TryClearPreviusButtons()
     {
         if (_currentDifferenceButtons != null)
@@ -112,11 +125,11 @@ public sealed class LevelBulder : MonoBehaviour
     }
 
     private void ClearPreviusButtons()
-    {        
+    {
         foreach (var button in _currentDifferenceButtons)
         {
             Destroy(button.gameObject);
-        }        
+        }
     }
 
     private IEnumerable<DifferenceButton> PlaceDifferencesButtonsOnImage(
@@ -126,7 +139,8 @@ public sealed class LevelBulder : MonoBehaviour
         {
             Vector2 worldPosition = CalculateWorldPosition(image.rectTransform, config.Position);
 
-            var differenceButton = Instantiate(_differenceButtonPrefab, worldPosition, Quaternion.identity, image.rectTransform);
+            var differenceButton = Instantiate(_differenceButtonPrefab, worldPosition, Quaternion.identity,
+                image.rectTransform);
 
             differenceButton.transform.localScale = config.Scale;
 
@@ -144,5 +158,4 @@ public sealed class LevelBulder : MonoBehaviour
 
         return new Vector2(normalWidnt, normalHight) + leftMin;
     }
-
 }
